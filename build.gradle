@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 apply from: "conlib.gradle"
 apply from: "conproject.gradle"
 android {
     compileSdkVersion buildconfig.compileSdkVersion
     defaultConfig {
         minSdkVersion buildconfig.minSdkVersion
-        targetSdkVersion buildconfig.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -21,6 +22,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation googlelib.kotlin
     // compile project(":system-component")
 }
 buildscript {
@@ -33,5 +35,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
+
     }
 }
