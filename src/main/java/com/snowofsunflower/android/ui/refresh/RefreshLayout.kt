@@ -5,17 +5,22 @@ import `in`.srain.cube.views.ptr.PtrDefaultHandler
 import `in`.srain.cube.views.ptr.PtrFrameLayout
 import android.content.Context
 
+/**
+ * 列表刷新封装类
+ */
 open class RefreshLayout(context: Context) : PtrClassicFrameLayout(context), IRefreshLayout {
-    override fun setRefreshListener(l: OnRefreshListener) {
+    override var mSetting: RefreshSetting? = null
+    /**
+     * 默认覆盖
+     */
+    override fun setRefreshListener(onRefresh: (IRefreshLayout) -> Unit) {
 
     }
-
-    override var mSetting: RefreshSetting? = null
 
     init {
         setPtrHandler(object : PtrDefaultHandler() {
             override fun onRefreshBegin(frame: PtrFrameLayout) {
-                // mListener?.onRefresh(this@RefreshLayout)
+                //  mListener?.onRefresh(this@RefreshLayout)
             }
 
         })
