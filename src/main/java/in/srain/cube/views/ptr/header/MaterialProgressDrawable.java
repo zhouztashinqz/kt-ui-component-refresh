@@ -17,8 +17,17 @@ package in.srain.cube.views.ptr.header;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.*;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.Path;
+import android.graphics.PixelFormat;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
@@ -26,15 +35,19 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.animation.*;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
 import android.view.animation.Interpolator;
-import in.srain.cube.views.ptr.util.PtrLocalDisplay;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.Transformation;
 
 import java.util.ArrayList;
 
+import in.srain.cube.views.ptr.util.PtrLocalDisplay;
+
 /**
  * Fancy progress indicator for Material theme.
- * It's taken from {@link android.support.v4.widget}.
+ * It's taken from {@link androidx.core.widget}.
  * I've done some slight changes.
  *
  * @hide

@@ -1,8 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-apply from: "conlib.gradle"
-apply from: "conproject.gradle"
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion buildconfig.compileSdkVersion
     defaultConfig {
@@ -10,7 +9,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -23,18 +21,4 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation googlelib.kotlin
-    // compile project(":system-component")
-}
-buildscript {
-
-    repositories {
-        mavenCentral()
-        google()
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-
-    }
 }
